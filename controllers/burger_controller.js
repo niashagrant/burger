@@ -5,7 +5,7 @@ var router = express.Router();
 var burger = require("../models/burger.js");
 
 router.get("/", function (req, res) {
-  burger.selectAll(function (data) {
+  burger.all(function (data) {
     var hbsObject = {
       burger: data,
     };
@@ -15,7 +15,7 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/burger", function (req, res) {
-  burger.createAll(
+  burger.create(
     ["name", "completed"],
     [req.body.name, req.body, completed],
     function (result) {
@@ -28,13 +28,13 @@ router.put("/api/burger/:id", function (req, res) {
   var condition = "id = " + req.params.id;
   console.log("condition", condition);
 
-  burger.updateAll({ completed: req.body.completed }, condition, function (
+  burger.update({ completed: req.body.completed }, condition, function (
     result
   ) {
     if (result.changedRow == 0) {
       return res.status(404).end();
     } else {
-      res.status(404).end();
+      res.status(200).end();
     }
   });
 });

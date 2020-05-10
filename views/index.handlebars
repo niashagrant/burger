@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1 class="display-3 ">Try Desserts Around the World!</h1>
+        <p class="lead">Type in the dessert you want to try and start eating!</p>
+        <hr class="my-4">
+        <img id="displayCase" src="/assets/img/158-1588483_buy-the-book-here-transparent-background-desserts-png.png"
+            alt="">
+
+
+        <form id="inputDessert">
+            <div class="row">
+                <div class="col-sm-6">
+                    <input id="newDessert" type="text" class="form-control" placeholder="Type New Dessert">
+                </div>
+
+                <button type="submit" class="btn btn-info" id="addDessert">Pick the Dessert</button>
+
+            </div>
+        </form>
+    </div>
+
+
+
+
+    <div class="row text-center">
+
+        <div class="col-sm-6">
+            <div class="card border-light">
+                <div class="card-header">New Dessert</div>
+                <div class="card-body">
+                    <ul>
+                        {{#each burger}}
+                        {{#unless completed}}
+
+                        <button type="button" class="eatDessert btn btn-warning" data-newEaten="{{completed}}"
+                            data-id="{{this.id}}">Eat
+                            Dessert</button>
+                        <hr>
+                        {{/unless}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="card text-white bg-info">
+                <div class="card-header">Eaten Desserts</div>
+                <div class="card-body">
+                    <ul>
+                        {{#each burger}}
+                        {{#if completed}}
+
+
+                        <hr>
+                        {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
