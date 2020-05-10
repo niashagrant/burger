@@ -1,5 +1,5 @@
 
-INSERT INTO burger
+INSERT INTO burgers
     (name, devoured)
 VALUE
 ("Donut",
