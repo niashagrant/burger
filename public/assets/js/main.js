@@ -3,11 +3,10 @@ $(function () {
     event.preventDefault();
 
     var newDessert = {
-      dessertName: $("#newDessert").val().trim(),
-      completed: 0,
+      name: $("#newDessert").val().trim(),
     };
-
-    $.ajax("/api/burgers", {
+    console.log(newDessert);
+    $.ajax("/api/burger", {
       type: "POST",
       data: newDessert,
     }).then(function () {
@@ -20,15 +19,28 @@ $(function () {
     event.preventDefault();
 
     var id = $(this).data("id");
-    var completedState = {
-      completed: 1,
+    var newState = $(this).data("devoured");
+    var devouredState = {
+      devoured: newState,
     };
 
     $.ajax("/api/burger/" + id, {
       type: "PUT",
-      data: completedState,
+      data: devouredState,
     }).then(function () {
       console.log("dessert eaten");
+      location.reload();
+    });
+  });
+
+  $("#delete").on("click", function (event) {
+    event.preventDefault();
+
+    var id = $(this).data("id");
+
+    $.ajax("/api/burger" + id, {
+      type: "DELETE",
+    }).then(function () {
       location.reload();
     });
   });
