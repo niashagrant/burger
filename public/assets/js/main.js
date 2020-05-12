@@ -35,10 +35,10 @@ $(function () {
 
   $("#delete").on("click", function (event) {
     event.preventDefault();
-
+    console.log("delete is clicked");
     var id = $(this).data("id");
 
-    $.ajax("/api/burger" + id, {
+    $.ajax("/api/burger/" + id, {
       type: "DELETE",
     }).then(function () {
       location.reload();

@@ -1,9 +1,9 @@
 <li>
     {{name}}
-
+    {{#unless devoured}}
     <button class="eatDessert text-white btn btn-warning" data-devoured="{{devoured}}" data-id="{{id}}">
-        {{#if devoured}}Eat Dessert{{/if}}
+        Eat Dessert
     </button>
-
+    {{/unless}}
     <button id="delete" class="btn btn-danger" data-id="{{id}}">Delete</button>
 </li>

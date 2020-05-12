@@ -32,12 +32,13 @@
                 <div class="card-header">New Dessert</div>
                 <div class="card-body">
                     <ul>
+
                         {{#each burger}}
-                        {{#if devoured}}
-                        {{> burger/burger-block devoured=true}}
+                        {{#unless devoured}}
+                        {{> burger/burger-block }}
 
                         <hr>
-                        {{/if}}
+                        {{/unless}}
                         {{/each}}
                     </ul>
                 </div>
@@ -52,7 +53,7 @@
                         {{#each burger}}
                         {{#if devoured}}
 
-                        {{> burger/burger-block devoured=false}}
+                        {{> burger/burger-block }}
                         <hr>
                         {{/if}}
                         {{/each}}
