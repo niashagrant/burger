@@ -1,15 +1,15 @@
 
 USE hqgwf8j4k7qy4kvu;
 
-CREATE TABLE burgers
+CREATE TABLE burger;
+DROP TABLE burger;
+
+CREATE TABLE burger
 (
-   id INT
-   AUTO_INCREMENT NOT NULL,
- name VARCHAR
-   (100) NOT NULL,
- devoured BOOLEAN NOT NULL,
- PRIMARY KEY
-   (id)
+id INT AUTO_INCREMENT NOT NULL,
+name VARCHAR(100) NOT NULL,
+devoured BOOL DEFAULT false,
+PRIMARY KEY (id)
  );
  
  
