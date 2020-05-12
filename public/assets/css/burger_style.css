@@ -16,3 +16,18 @@
 .card-header {
   font-weight: 800;
 }
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  font-weight: 600;
+  font-size: large;
+  font-style: oblique;
+  text-transform: uppercase;
+}
+
+#addDessert {
+  margin-right: 75%;
+}
